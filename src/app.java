@@ -15,6 +15,7 @@ public class app {
   public static void main(String[] args) {
     // Declaracion de variables
     Menu menu = Menu.getInstancia();
+    System.out.println("\tNOMBRE\t\t|\tEDAD\t|\tNOTA\n");
     
     while (runApp) {
       // Bucle para la ejecución global de la app
