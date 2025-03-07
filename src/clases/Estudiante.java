@@ -38,4 +38,10 @@ public class Estudiante {
   public double getNota() {
     return nota;
   }
+
+  // Sobreescribo el metodo toString para imprimir estudiantes por pantalla
+  @Override
+  public String toString() {
+    return "\t" + this.nombre + "\t\t|\t" + this.edad + "\t|\t" + String.format("%.2f", this.nota) + "\n";
+  }
 }

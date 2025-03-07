@@ -39,9 +39,9 @@ public class ClaseArrayList {
     String resultado = "\tNOMBRE\t\t|\tEDAD\t|\tNOTA\n";
     for (Estudiante estudiante : estudiantes) {
       // Recorremos el arraylist y vamos sumando 
-      resultado += estudiante.toString();
+      resultado = resultado + estudiante.toString();
     }
-    resultado += "\n\n";
+    resultado = resultado + "\n\n";
     return resultado;
   }
 
