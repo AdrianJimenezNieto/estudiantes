@@ -48,6 +48,7 @@ public class App {
     while(runApp) {
       MENU.mostrarMenu();
       input = SCANNER.next();
+      System.out.println("\n\n");
       if(checkInput(input, Menu.TipoMenu.PRINCIPAL)) {
         switch (input) {
           // 1. Cambiar al menú ARRAY con el método ejecutarMenuArray()
@@ -63,10 +64,12 @@ public class App {
 
   // metodo para ejecutar el menu ARRAY
   private static void ejecutarMenuArray() {
+    runArray = true;
     MENU.setTipo(Menu.TipoMenu.ARRAY);
     while(runArray) {
       MENU.mostrarMenu();
       input = SCANNER.next();
+      System.out.println("\n\n");
       if (checkInput(input, Menu.TipoMenu.ARRAY)) {
         switch (input) {
           // 1. Cargar datos de prueba
@@ -89,6 +92,7 @@ public class App {
     while (runArrayList) {
       MENU.mostrarMenu();
       input = SCANNER.next();
+      System.out.println("\n\n");
       if(checkInput(input, Menu.TipoMenu.ARRAYLIST)) {
         switch (input) {
           // 1. Cargamos los datos de prueba con el metodo correspondiente
@@ -98,7 +102,7 @@ public class App {
           //3. Imprimimos por pantalla la lista de estudiantes gracias a .toString()
           case "3": System.out.println(ARRAY_LIST); break;
           // 4. Utilizamos el ControlStreams para pedir un estudiante y eliminarlo
-          case "4": ARRAY_LIST.eliminarEstudiante(ControlStreams.pedirEstudiante(SCANNER)); break;
+          case "4": ARRAY_LIST.eliminarEstudiante(ControlStreams.nombreEstudiante(SCANNER)); break;
           // 5. Utilizamos el metodo estático para buscar estudiantes y devolverlos por pantalla
           case "5": buscarEstudianteArrayList(); break;
           // 6. Cambiamos la variable de control de bucle a falso y volvemos al menu principal
@@ -110,7 +114,6 @@ public class App {
 
   // Método para buscar un estudiante en el array list
   private static void buscarEstudianteArrayList() {
-
     Estudiante estudiante = ARRAY_LIST.buscarEstudiante(ControlStreams.nombreEstudiante(SCANNER));
     if (estudiante != null) System.out.println(estudiante);
   }

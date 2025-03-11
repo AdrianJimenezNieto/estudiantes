@@ -68,11 +68,12 @@ public class AulaArrayList implements Aula{
   }
 
   // Método para eliminar un estudiante por nombre
-  public void eliminarEstudiante(Estudiante estudiante) {
+  public void eliminarEstudiante(String nombre) {
     // reutilizo el metodo de busqueda para la eliminación del registro
+    Estudiante estudiante = buscarEstudiante(nombre);
     if (estudiante != null) {
       estudiantes.remove(estudiante);
-      System.out.println("Estudiante con nombre \"" + estudiante.getNombre() + "\" eliminado del ArrayList.");
+      System.out.println("Estudiante con nombre \"" + estudiante.getNombre() + "\" eliminado del ArrayList.\n");
     } 
   }
 
