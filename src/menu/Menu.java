@@ -1,11 +1,11 @@
-package clases;
+package menu;
 
 public class Menu {
   // Por razones de que solo debe haber un menu en nuestro programa y para practicar,
   // implementaré el patron de diseño Singleton a esta clase
   
-  public final static String[] TIPOS = {"principal", "array", "arraylist"};
-  private static String tipo = TIPOS[0];
+  public enum TipoMenu { PRINCIPAL, ARRAY, ARRAYLIST};
+  private static TipoMenu tipo = TipoMenu.PRINCIPAL;
 
   private static Menu instancia;
   
@@ -19,17 +19,17 @@ public class Menu {
   }
 
   // Getters y setters
-  public String getTipo() {
+  public TipoMenu getTipo() {
     return tipo;
   }
 
-  public void setTipo(String nuevoTipo) {
+  public void setTipo(TipoMenu nuevoTipo) {
     tipo = nuevoTipo;
   }
 
   // Metodo para mostrar el menu por pantalla
   public void mostrarMenu() {
-    if (tipo == TIPOS[0]) {
+    if (tipo == TipoMenu.PRINCIPAL) {
       System.out.println("==========================================");
       System.out.println("             \033[1mMENU PRINCIPAL");
       System.out.println("==========================================");
@@ -37,23 +37,25 @@ public class Menu {
       System.out.println("2. Usar ArrayList");
       System.out.println("3. Salir\n\n");
     }
-    else if (tipo == TIPOS[1]) {
+    else if (tipo == TipoMenu.ARRAY) {
       System.out.println("==========================================");
       System.out.println("                \033[1mMENU ARRAY");
       System.out.println("==========================================");
-      System.out.println("1. Agregar estudiante");
-      System.out.println("2. Ver todos los estudiantes");
-      System.out.println("3. Volver al menu principal\n\n");
+      System.out.println("1. Cargar datos predefinidos para probar");
+      System.out.println("2. Agregar estudiante");
+      System.out.println("3. Ver todos los estudiantes");
+      System.out.println("4. Volver al menu principal\n\n");
     }
-    else if (tipo == TIPOS[2]) {
+    else if (tipo == TipoMenu.ARRAYLIST) {
       System.out.println("==========================================");
       System.out.println("             \033[1mMENU ARRAYLIST");
       System.out.println("==========================================");
-      System.out.println("1. Agregar estudiante");
-      System.out.println("2. Ver estudiantes");
-      System.out.println("3. Eliminar un estudiante por nombre");
-      System.out.println("4. Buscar un estudiante por nombre");
-      System.out.println("5. Volver al menu principal\n\n");
+      System.out.println("1. Cargar datos predefinidos para pruebas");
+      System.out.println("2. Agregar estudiante");
+      System.out.println("3. Ver estudiantes");
+      System.out.println("4. Eliminar un estudiante por nombre");
+      System.out.println("5. Buscar un estudiante por nombre");
+      System.out.println("6. Volver al menu principal\n\n");
     }
   }
 }
